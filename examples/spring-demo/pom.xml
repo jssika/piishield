@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>io.piishield.demo</groupId>
+    <groupId>io.github.jssika.demo</groupId>
     <artifactId>spring-demo</artifactId>
     <version>1.0.0</version>
     <name>PIIShield Spring Demo</name>
@@ -33,7 +33,7 @@
 
         <!-- PIIShield — installed from local Maven repo -->
         <dependency>
-            <groupId>io.piishield</groupId>
+            <groupId>io.github.jssika</groupId>
             <artifactId>piishield-spring</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>

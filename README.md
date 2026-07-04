@@ -40,7 +40,7 @@ Add one dependency:
 
 ```xml
 <dependency>
-    <groupId>io.piishield</groupId>
+    <groupId>io.github.jssika</groupId>
     <artifactId>piishield-spring</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 </dependency>
