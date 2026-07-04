@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: piishield-demo
+
+logging:
+  level:
+    io.piishield: DEBUG
+    io.piishield.demo: INFO
+
+piishield:
+  enabled: true
+  detectors:
+    ssn:
+      enabled: true
+      action: MASK
+    email:
+      enabled: true
+      action: PARTIAL
+    phone:
+      enabled: true
+      action: MASK
+    credit_card:
+      enabled: true
+      action: MASK
+    jwt:
+      enabled: true
+      action: REMOVE
+    api_key:
+      enabled: true
+      action: REMOVE
+  filter:
+    enabled: true
+    sanitize-response-body: true
+  logback:
+    enabled: true
+  aop:
+    enabled: true

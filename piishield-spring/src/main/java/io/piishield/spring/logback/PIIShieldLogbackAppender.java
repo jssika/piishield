@@ -46,7 +46,11 @@ public class PIIShieldLogbackAppender extends AppenderBase<ILoggingEvent> {
             }
         }
 
-        root.detachAndStopAllAppenders();
+        // detachAndStopAllAppenders would stop the delegates, making doAppend() a no-op.
+        // Detach each one individually so they stay started and can still forward events.
+        for (Appender<ILoggingEvent> delegate : delegates) {
+            root.detachAppender(delegate);
+        }
         setContext(context);
         start();
         root.addAppender(this);

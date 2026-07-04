@@ -9,9 +9,9 @@ public class SSNDetector implements Detector {
 
     public static final String TYPE = "SSN";
 
-    // Matches 123-45-6789 and 123456789, but not all-zeros segments
+    // Matches 123-45-6789 and 123456789 (including 9xx/ITIN range — all are sensitive)
     private static final Pattern SSN_PATTERN = Pattern.compile(
-        "(?<![\\d])(?!000|666|9\\d{2})\\d{3}(-?)(?!00)\\d{2}\\1(?!0000)\\d{4}(?![\\d])"
+        "(?<![\\d])(?!000|666)\\d{3}(-?)(?!00)\\d{2}\\1(?!0000)\\d{4}(?![\\d])"
     );
 
     @Override
